@@ -6,9 +6,9 @@
 
 ### **Solution 1** Intuitive comparison
 
-- Start from the first characters for both haystack and needle
-- Compare the characters one by one
-- Once the characters don't match, move the starting character of haystack one step to the right and compare from the beginning
+1. Start from the first characters for both haystack and needle
+2. Compare the characters one by one
+3. Once the characters don't match, move the starting character of haystack one step to the right and compare from the beginning
 
 The time complexity is O(n^2)
 
