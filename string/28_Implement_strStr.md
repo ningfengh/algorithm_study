@@ -25,3 +25,34 @@ for (int i=1;i<=s.size();i++){
 	T[i] = pos + 1;
 }
 ```
+
+Once got the KMP table the algorithm is very straightforward
+
+1. Start from the first characters for both haystack and needle
+2. Compare the characters one by one
+3. Once the characters don't match, move the pointer to needle based on KMP table
+  - If (pointer_needle==-1) { pointer_needle=0; pointer_haystack++;}
+  - Else pointer_needle = T[pointer_needle]
+
+One simplest example to think about is that needle does not have duplicated characters.
+
+Let haystack = abcdfgcde and needle = cde
+
+The KMP table is 
+```
+0   1   2   3
+-1  0   0   0
+```
+
+When the comparison proceeds to 
+```
+abcdfgcde
+  cde
+    ^
+```
+The next step will directly go to 
+```
+abcdfgcde
+     cde
+     ^
+```
