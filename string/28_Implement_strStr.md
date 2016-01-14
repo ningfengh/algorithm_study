@@ -56,3 +56,36 @@ abcdfgcde
      cde
      ^
 ```
+
+
+### To output all the matching positions
+
+This is a wrong solution
+```
+while (pt1<haystack.size()){ // can use this comparision because pt1 will never be negative
+	if (pt2 == -1){
+		pt2 = 0;
+		pt1++;
+	}
+	else if (haystack[pt1]==needle[pt2]){
+		pt1++;
+		pt2++;
+	}
+	else pt2 = T[pt2];
+
+	if (pt2==needle.size()) { //at the next step, needle pointer will be out of range
+		result.push_back(pt1-pt2);
+	}
+}
+```
+A solution from wiki book
+```
+while(pt1 < haystack.size())
+{
+	while(pt2 != -1 && (pt2 == needle.size() || haystack[pt1] != needle[pt2])) pt2 = T[pt2];
+	pt1++;
+	pt2++; // if pt2==-1, pt2++ will be 0
+	if(pt2 == needle.size()) matches.push_back(pt1 - pt2);
+}
+```
+
