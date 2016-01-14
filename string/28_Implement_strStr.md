@@ -4,6 +4,8 @@
 
 >Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
+For this problem, KMP (8ms) is slower than the naive approach (4ms) because of the overhead to calculate the KMP table. 
+
 ### **Solution 1** Intuitive comparison
 
 1. Start from the first characters for both haystack and needle
