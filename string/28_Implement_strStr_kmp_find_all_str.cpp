@@ -24,8 +24,7 @@ public:
 		int pt1 = 0, pt2 = 0;
 		int length1 = haystack.size(), length2 = needle.size();
 		while (pt1<length1){
-			cout<<pt1<<" "<<pt2<<endl;
-
+			
 			if (pt2 == -1){
 				pt2 = 0;
 				pt1++;
